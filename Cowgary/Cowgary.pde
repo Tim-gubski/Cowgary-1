@@ -21,11 +21,17 @@ void draw() {
 }
 
 void keyPressed() {
-  
-  speed = 1;
+  if (key == CODED) {
+      if (keyCode == RIGHT) {
+        speed = 1;
+      } else if (keyCode == LEFT) {
+        speed = -1;
+      }else{
+        speed=0;
+    }
 }
 
 
-void keyReleased() {
-  speed = 0;
-}
+//void keyReleased() {
+//  speed = 0;
+//}
