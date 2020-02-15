@@ -20,18 +20,16 @@ void setBackground() {
 }
 
 void keyPressed() {
-  if (key == CODED) {
-      if (keyCode == RIGHT) {
-        speed = 1;
-      } else if (keyCode == LEFT) {
-        speed = -1;
-      }else{
+  if (keyCode == RIGHT) {
+    speed = 1;
+  } else if (keyCode == LEFT) {
+    speed = -1;
+  } else{
         speed=0;
-    }
   }
 }
 
 
-//void keyReleased() {
-//  speed = 0;
-//}
+void keyReleased() {
+  speed=0;
+}
