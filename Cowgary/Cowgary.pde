@@ -1,13 +1,6 @@
-PImage calgary;
-PImage ground;
-int x,y;
-
-int speed = 0;
-
 void setup() {
   size(900, 700);
-  calgary = loadImage("CalgaryBackdrop.png");
-  ground = loadImage("Ground.png");
+  loadImages();
 }
 
 void draw() {
