@@ -1,12 +1,15 @@
+PImage calgary;
+int x,y;
+
 void setup() {
-  size(480, 120);
+  size(900, 900);
+  calgary = loadImage("Calgary_Pixelated.png");
 }
 
 void draw() {
-  if (mousePressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
+  background(255);
+  x = constrain(x, 0, calgary.width - width);
+  y = constrain(y, 0, calgary.height - height);
+  image(calgary, -x, 0);
+  x = frameCount;
 }
