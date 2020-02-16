@@ -1,9 +1,9 @@
 void setup() {
   size(900, 700);
   loadImages();
-  ctScreenSetup();
+  setupTextMessages();
 }
 
 void draw() {
-  ctScreenDraw();
+  textMessages();
 }

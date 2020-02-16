@@ -1,4 +1,5 @@
 PImage calgary;
+PImage office;
 PImage ground;
 PImage HQ;
 PImage pipe;
@@ -17,6 +18,8 @@ int jumpSpeed = 0;
 
 void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
+  office = loadImage("OfficeMap.png");
+  office.resize(900,700);
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
   bus = loadImage("CalgaryTransitBus.png");
