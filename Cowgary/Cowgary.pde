@@ -2,11 +2,13 @@ void setup() {
   size(900, 700);
   loadImages();
   startScreenSetup();
+  //introNewsPaperScreenSetup();
   //convinceJezosScreenSetup();
 }
 
 void draw() {
-  //convinceJezosScreenDraw();
+  //introNewsPaperScreenDraw();
+  convinceJezosScreenDraw();
   switch(currentScreen) {
     case "startScreen":
       startScreenDraw();
