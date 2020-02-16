@@ -20,6 +20,6 @@ This game was created for CalgaryHacks 2020.
 * ScreamingEmoji: https://www.pngfind.com/download/imihJbo_the-scream-emoji-pixel-art-drawings-hd-png/
 * MoneyWithWingsEmoji: https://emojipedia.org/money-with-wings/
 * OK Hand Emoji: https://emojipedia.org/ok-hand/
-* Team Sprites: Avatars In Pixels © MostlyPixels / Lunaii (modified)
+* Team Sprites: Avatars In Pixels © MostlyPixels / Lunaii http://www.avatarsinpixels.com/ (modified)
 * Office Map: https://www.deviantart.com/amysaurus121/art/Office-Map-2-664610265
 * PipelineBG: https://i.redd.it/qmfjuz883g7z.png
