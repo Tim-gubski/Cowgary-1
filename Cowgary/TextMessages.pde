@@ -11,6 +11,8 @@ void setupTextMessages(String preFix,int num){
     texts[i-1] = loadImage(fileName);
     texts[i-1].resize(600,600);
   }
+  calm.stop();
+  bezos.play();
 }
 
 void textMessages(){

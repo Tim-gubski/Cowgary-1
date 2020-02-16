@@ -9,7 +9,8 @@ PImage smallPipe;
 PImage emptyPipe;
 PImage bus;
 
-SoundFile file;
+SoundFile calm;
+SoundFile bezos;
 
 int x = 0;
 float cowX = 400;
@@ -43,8 +44,9 @@ void loadImages() {
   cowIdleRight = new Animation("idle_",5);
   cowIdleLeft = new Animation("leftIdle_",5);
   
-  file = new SoundFile(this, "Conferring_with_an_Old_Master.mp3"); 
-  //file.play();
+  calm = new SoundFile(this, "Retroland_Recital.wav"); 
+  bezos = new SoundFile(this, "Conferring_with_an_Old_Master.wav"); 
+  calm.play();
 }
 
 void setBackground() {
