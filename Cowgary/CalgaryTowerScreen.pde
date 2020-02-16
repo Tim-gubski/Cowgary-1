@@ -11,7 +11,7 @@ int start;
 int towerHeight;
 
 void ctScreenSetup() {
-  startScreenBg = loadImage("CalgaryBackdrop.png");
+  startScreenBg = loadImage("ConstructionBackground.png");
   groundImg = loadImage("Ground.png");
   calgaryTower = loadImage("CalgaryTowerFullSprite.png");
   arrowL = loadImage("ArrowKeyLeft_Released.png");
@@ -40,9 +40,6 @@ void ctScreenDraw() {
   }
   
   if (towerHeight == -120) {
-    textFont(font, 40);
-    fill(255,255,255);
-    text("YAY!", 600, 280);
     busDriveOn();
   }
   
@@ -97,7 +94,7 @@ void drawDottedLine() {
   dottedLine.resize(250, dottedLine.height);
   
   textFont(font, 40);
-  fill(0,0,0);
+  fill(255,255,255);
   text("CN  Tower", 50, 200);
   text("553 m", 90, 240);
 }
