@@ -4,14 +4,22 @@ PImage arrowR;
 PImage arrowRPressed;
 PImage arrowLPressed;
 PImage dottedLine;
+PImage towerQuestDialogueBox;
+
+PFont tower_font;
+
 String btnState;
 boolean btnPressed;
 float pressCount;
 int start;
 int towerHeight;
 
+
+
+boolean towerQuestInfoDismissed;
+
 void ctScreenSetup() {
-  startScreenBg = loadImage("CalgaryBackdrop.png");
+  startScreenBg = loadImage("ConstructionBackground.png");
   groundImg = loadImage("Ground.png");
   calgaryTower = loadImage("CalgaryTowerFullSprite.png");
   arrowL = loadImage("ArrowKeyLeft_Released.png");
@@ -19,7 +27,10 @@ void ctScreenSetup() {
   arrowRPressed = loadImage("ArrowKeyRight_Pressed.png");
   arrowLPressed = loadImage("ArrowKeyLeft_Pressed.png");
   dottedLine = loadImage("DashedLine.png");
-  font = createFont("ARCADECLASSIC.TTF", 40);
+  towerQuestDialogueBox = loadImage("dialog_box.png");
+  towerQuestDialogueBox.resize(750, 250);
+
+  tower_font = createFont("munro.ttf", 40);
   btnPressed = false;
   pressCount = 0;
   start = 40;
@@ -28,12 +39,27 @@ void ctScreenSetup() {
   
   stopSounds();
   pipeBoi.loop();
+  towerQuestInfoDismissed = false;
 }
 
 void ctScreenDraw() {
   buildTower(towerHeight);
   buttonStateAction();
   drawCow(true);
+  
+  if(!towerQuestInfoDismissed) {
+    if (!btnPressed) {
+      image(towerQuestDialogueBox, 75, 200);
+      textFont(tower_font, 40);
+      fill(255, 255, 255);
+      text("Build the Cowgary Tower!", 120, 275);
+      text("Use the right and left arrow keys.", 120, 325);
+      text("Press an arrow key to begin.", 120, 375);
+    }
+    else {
+      towerQuestInfoDismissed = true;
+    }
+  }
   
   if(pressCount > start && towerHeight != -120) {
     towerHeight -= start;
@@ -43,9 +69,6 @@ void ctScreenDraw() {
   }
   
   if (towerHeight == -120) {
-    textFont(font, 40);
-    fill(255,255,255);
-    text("YAY!", 600, 280);
     busDriveOn();
   }
   
@@ -98,9 +121,8 @@ void buildTower(int y) {
 void drawDottedLine() {
   image(dottedLine, 265,100);
   dottedLine.resize(250, dottedLine.height);
-  
-  textFont(font, 40);
-  fill(0,0,0);
+  fill(255,255,255);
+  textFont(tower_font, 40);
   text("CN  Tower", 50, 200);
   text("553 m", 90, 240);
 }

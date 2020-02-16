@@ -162,12 +162,19 @@ void keyPressed() {
       break;
     case UP:
       herdingBtnState = "up";
+      selectState = "up";
+      selection-=1;
       if(onPlatform()){
         jumpSpeed=15;
       }
       break;
     case DOWN:
+      selection+=1;
       herdingBtnState = "down";
+      selectState = "down";
+      break;
+    case ENTER:
+      jezosStateCounter+=1;
   }
 }
 

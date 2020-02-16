@@ -1,12 +1,10 @@
-import processing.sound.*; 
 void setup() {
   size(900, 700);
   loadImages();
-  startScreenSetup();
+  //startScreenSetup();
 }
 
-void draw() {
-  switch(currentScreen) {
+void draw(){  switch(currentScreen) {
     case "startScreen":
       startScreenDraw();
       break;
