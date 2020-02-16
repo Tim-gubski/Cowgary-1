@@ -1,7 +1,7 @@
 class Animation {
   PImage[] images;
   int imageCount;
-  int frame;
+  float frame;
   
   Animation(String imagePrefix, int count) {
     imageCount = count;
@@ -9,14 +9,15 @@ class Animation {
 
     for (int i = 0; i < imageCount; i++) {
       // Use nf() to number format 'i' into four digits
-      String filename = imagePrefix + nf(i, 4) + ".gif";
+      String filename = imagePrefix + nf(i+1, 2) + ".png";
       images[i] = loadImage(filename);
+      images[i].resize(120,120);
     }
   }
 
   void display(float xpos, float ypos) {
-    frame = (frame+1) % imageCount;
-    image(images[frame], xpos, ypos);
+    frame = (frame+0.3)%imageCount;
+    image(images[floor(frame)], xpos, ypos);
   }
   
   int getWidth() {
