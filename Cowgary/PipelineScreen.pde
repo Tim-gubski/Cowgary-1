@@ -20,7 +20,13 @@ void pipeScreenDraw() {
     pipeBobChange*=-1;
   }
   for(int i = 0; i<platforms.length; i+=2){
-    rect(platforms[i],platforms[i+1],200,20);
+    //rect(platforms[i],platforms[i+1],200,20);
+    for(int v = 0; v<10;v++){
+      image(platformGround, platforms[i]+v*20,platforms[i+1]);
+      noFill();
+      stroke(0);
+      rect(platforms[i]+v*20, platforms[i+1], 20, 20);
+    }
     
     //Icon Pipes
     if(pickedUpPipes[i/2] == true){
