@@ -3,10 +3,13 @@ PImage ground;
 PImage HQ;
 
 int x = 0;
+float cowX = 400;
+float cowY = 400;
 Animation cowRight, cowLeft, cowIdleLeft,cowIdleRight;
 
 String cowState = "idleRight";
 int speed = 0;
+int jumpSpeed = 0;
 
 void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
@@ -26,51 +29,87 @@ void setBackground() {
     image(ground, -2*x+400*i, 570);
   }
   image(HQ, -2*x+1200, 130);
+  
+  x+=speed;
+  drawCow(false);
+}
+
+boolean onPlatform(){
+  boolean onPlatform = false;
+      for(int i = 0; i<platforms.length; i+=2){
+      if(cowX>platforms[i] && cowX<platforms[i]+100 && cowY < platforms[i+1]-100 && cowY > platforms[i+1]-120 && speed>2){
+      onPlatform = true;
+      }
+    }
+    if(cowY>470){
+      onPlatform = true;
+    }
+  return onPlatform;
+}
+
+void drawCow(boolean moves){
+  if(moves){
+    cowX+=speed*2;
+    cowY-=jumpSpeed;
+    
+    if(!onPlatform()){
+      jumpSpeed-=1;
+    }else{
+      jumpSpeed = 0; 
+    }
+  
+  }else{
+   cowX = 400; 
+  }
+  
   switch(cowState) {
     case "right":
-      cowRight.display(400, 470, 0.3);
+      cowRight.display(cowX, cowY, 0.3);
       break;
     case "left":
-      cowLeft.display(400, 470, 0.3);
+      cowLeft.display(cowX, cowY, 0.3);
       break;
     case "idleLeft":
-      cowIdleLeft.display(400, 470, 0.15);
+      cowIdleLeft.display(cowX, cowY, 0.15);
       break;
     case "idleRight":
-      cowIdleRight.display(400, 470, 0.15);
+      cowIdleRight.display(cowX, cowY, 0.15);
       break;
     default:
 
   }
-  x+=speed;
 }
 
 void keyPressed() {
-  switch(keyCode) {
-    case RIGHT:
+  btnPressed = true;
+  switch(keyCode) {    case RIGHT:
       speed = 1;
+      btnState = "right";
       cowState = "right";
       break;
     case LEFT:
       speed = -1;
+      btnState = "left";
       cowState="left";
       break;
-    default:
-      speed=0;
-      if(cowState=="right"){
-        cowState="idleRight";
-      }else if(cowState=="left"){
-        cowState="idleLeft";
+    case UP:
+      if(onPlatform()){
+        jumpSpeed=19;
       }
+      break;
   }
 }
 
 
 void keyReleased() {
-  speed=0;
-  if(cowState=="right"){
-        cowState="idleRight";
-  }else if(cowState=="left"){
-        cowState="idleLeft";
+  btnPressed = false;
+  println(keyCode);
+  if(keyCode!=38){
+    speed=0;
+    if(cowState=="right"){
+          cowState="idleRight";
+    }else if(cowState=="left"){
+          cowState="idleLeft";
+    }
   }
 }
