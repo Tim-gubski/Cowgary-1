@@ -1,6 +1,3 @@
-
-
-
 PImage calgary;
 PImage office;
 PImage ground;
@@ -11,6 +8,8 @@ PImage pipe;
 PImage smallPipe;
 PImage emptyPipe;
 PImage bus;
+
+SoundFile file;
 
 int x = 0;
 float cowX = 400;
@@ -43,6 +42,9 @@ void loadImages() {
   cowLeft = new Animation("left_", 10);
   cowIdleRight = new Animation("idle_",5);
   cowIdleLeft = new Animation("leftIdle_",5);
+  
+  file = new SoundFile(this, "Conferring_with_an_Old_Master.mp3"); 
+  //file.play();
 }
 
 void setBackground() {

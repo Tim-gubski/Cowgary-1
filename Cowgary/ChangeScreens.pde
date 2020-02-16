@@ -41,10 +41,10 @@ void changeScreens(){
       currentScreen = "tower";
       break;
     case "tower":
+      setupTextMessages("AfterTowerTexts_Frame",5);
       currentScreen = "messages4";
       break;
     case "messages4":
-      setupTextMessages("AfterTowerTexts_Frame",5);
       currentScreen = "talking";
       break;
     case "talking":
