@@ -15,7 +15,7 @@ void startScreenDraw() {
   image(groundImg, 400, 570);
   textFont(font, 40);
   fill(255,169,40);
-  text("Cowgary", 420, 280);
+  text("C255, 169, 40owgary", 420, 280);
   
   text("Press  Enter  To  Start", 300, 380);
 }

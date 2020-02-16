@@ -1,6 +1,10 @@
 PImage calgary;
 PImage ground;
 PImage HQ;
+PImage pipe;
+PImage smallPipe;
+PImage emptyPipe;
+PImage bus;
 
 int x = 0;
 float cowX = 400;
@@ -15,6 +19,14 @@ void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
+  bus = loadImage("CalgaryTransitBus.png");
+  bus.resize(400,100);
+  pipe = loadImage("Pipe.png");
+  pipe.resize(120,90);
+  smallPipe = loadImage("Pipe.png");
+  smallPipe.resize(60,40);
+  emptyPipe = loadImage("PipeEmpty.png");
+  emptyPipe.resize(60,40);
   cowRight = new Animation("right_", 10);
   cowLeft = new Animation("left_", 10);
   cowIdleRight = new Animation("idle_",5);
@@ -37,8 +49,9 @@ void setBackground() {
 boolean onPlatform(){
   boolean onPlatform = false;
       for(int i = 0; i<platforms.length; i+=2){
-      if(cowX>platforms[i] && cowX<platforms[i]+100 && cowY < platforms[i+1]-100 && cowY > platforms[i+1]-120 && speed>2){
+      if(cowX>platforms[i]-100 && cowX<platforms[i]+170 && cowY < platforms[i+1]-90 && cowY > platforms[i+1]-110){
       onPlatform = true;
+      pickedUpPipes[i/2] = true;
       }
     }
     if(cowY>470){
@@ -97,7 +110,7 @@ void keyPressed() {
     case UP:
       herdingBtnState = "up";
       if(onPlatform()){
-        jumpSpeed=19;
+        jumpSpeed=15;
       }
       break;
     case DOWN:
@@ -108,7 +121,6 @@ void keyPressed() {
 
 void keyReleased() {
   btnPressed = false;
-  println(keyCode);
   if(keyCode!=38){
     speed=0;
     if(cowState=="right"){
