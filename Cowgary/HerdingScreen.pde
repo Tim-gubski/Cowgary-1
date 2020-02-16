@@ -108,7 +108,7 @@ void herdingScreenDraw() {
   }
   
   if (aidan.collision && alyssa.collision && kim.collision && nara.collision && tim.collision) {
-    print("all done");
+    fade();
   }
 }
 

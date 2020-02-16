@@ -1,5 +1,5 @@
 
-SoundFile calm;
+
 
 PImage calgary;
 PImage office;
@@ -125,6 +125,7 @@ void resetCow(){
 }
 
 void keyPressed() {
+  stateCounter++;
   btnPressed = true;
   if(currentScreen == "startScreen" && keyCode == ENTER){
     started = true;

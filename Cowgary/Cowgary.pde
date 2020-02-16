@@ -26,16 +26,19 @@ void draw() {
       herdingScreenDraw();
       break;
     case "messages2":
-      changeScreens();
+      textMessages();
       break;
     case "pipeline":
       pipeScreenDraw();
       break;
     case "messages3":
-      changeScreens();
+      textMessages();
       break;
     case "tower":
       ctScreenDraw();
+      break;
+    case "messages4":
+      textMessages();
       break;
     case "talking":
       changeScreens();

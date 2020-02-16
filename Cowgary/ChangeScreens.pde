@@ -6,6 +6,8 @@ void changeScreens(){
   busReset();
   resetCow();
   x=0;
+  stateCounter=0;
+  currentText = 0;
   switch(currentScreen) {
     case "startScreen":
       currentScreen = "walkToOffice";
@@ -15,7 +17,7 @@ void changeScreens(){
       currentScreen = "NewsPaper";
       break;
     case "NewsPaper":
-      setupTextMessages();
+      setupTextMessages("PhoneTexts_Frame",9);
       currentScreen = "messages1";
       break;
     case "messages1":
@@ -23,6 +25,7 @@ void changeScreens(){
       currentScreen = "herding";
       break;
     case "herding":
+      setupTextMessages("AfterHerdingTexts_Frame",6);
       currentScreen = "messages2";
       break;
     case "messages2":
@@ -30,6 +33,7 @@ void changeScreens(){
       currentScreen = "pipeline";
       break;
     case "pipeline":
+      setupTextMessages("AfterPipelineTexts_Frame",12);
       currentScreen = "messages3";
       break;
     case "messages3":
@@ -37,6 +41,10 @@ void changeScreens(){
       currentScreen = "tower";
       break;
     case "tower":
+      currentScreen = "messages4";
+      break;
+    case "messages4":
+      setupTextMessages("AfterTowerTexts_Frame",5);
       currentScreen = "talking";
       break;
     case "talking":
