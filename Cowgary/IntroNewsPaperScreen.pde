@@ -44,5 +44,5 @@ void drawIntroDialogueText()
   textFont(font, 40);
   fill(255,255,255);
   text("Another  beautiful  day  as  the  mayor ", 50, 560);
-  text("of  Cowtown!", 50, 600);
+  text("of  Cowgary!", 50, 600);
 }
