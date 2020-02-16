@@ -68,7 +68,7 @@ void convinceJezosScreenDraw() {
     case 6:
       challengeText("> At least we aren’t Deadmonton.", "> We have the Stampede.", "> Flames will win the Stanley Cup this year.");
       break;
-    case 7:
+    default:
       fade();
       break;  
   }
