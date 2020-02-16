@@ -3,20 +3,20 @@ int fadeSpeed = 10;
 boolean fade(){
   fill(0);
   rect(0,0,fadeWidth,height);
-  if(fadeWidth<width){
+  if(fadeWidth<width+200){
     fadeWidth+=fadeSpeed;
     fadeSpeed+=2;
     fill(255);
     return false;
   }else{
+   changeScreens();
    return true; 
   }
-
 }
 
 void resetFade(){
-  int fadeWidth = 0;
-  int fadeSpeed = 10;
+  fadeWidth = 0;
+  fadeSpeed = 10;
 }
 
 

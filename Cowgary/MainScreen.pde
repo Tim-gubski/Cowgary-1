@@ -43,16 +43,25 @@ void setBackground() {
   for (int i = 0; i<=6; i++){
     image(ground, -2*x+400*i, 570);
   }
-  image(HQ, -2*x+1200, 130);
+  //image(HQ, -2*x+1200, 130);
   
-  x+=speed;
+  if(x>=0 && speed<0){
+    x+=speed;
+  }else if(x<1000 && speed>0){
+    x+=speed;
+  }
+  if(x>600){
+   busDriveOn(); 
+   drawCow(true);
+  }else{
   drawCow(false);
+  }
 }
 
 boolean onPlatform(){
   boolean onPlatform = false;
-      for(int i = 0; i<platforms.length; i+=2){
-      if(cowX>platforms[i]-100 && cowX<platforms[i]+170 && cowY < platforms[i+1]-90 && cowY > platforms[i+1]-110){
+    for(int i = 0; i<platforms.length; i+=2){
+      if(cowX>platforms[i]-100 && cowX<platforms[i]+170 && cowY < platforms[i+1]-90 && cowY > platforms[i+1]-110 && currentScreen == "pipeline"){
       onPlatform = true;
       pickedUpPipes[i/2] = true;
       }
@@ -75,7 +84,8 @@ void drawCow(boolean moves){
     }
   
   }else{
-   cowX = 400; 
+   cowX = 400;
+   cowY = 470;
   }
   
   switch(cowState) {
@@ -96,8 +106,15 @@ void drawCow(boolean moves){
   }
 }
 
+void resetCow(){
+  cowX = 400;
+}
+
 void keyPressed() {
   btnPressed = true;
+  if(currentScreen == "startScreen" && keyCode == ENTER){
+    started = true;
+  }
   switch(keyCode) {    case RIGHT:
       speed = 1;
       btnState = "right";

@@ -24,12 +24,13 @@ void ctScreenSetup() {
   pressCount = 0;
   start = 40;
   towerHeight = 280;
+  cowX = 200;
 }
 
 void ctScreenDraw() {
   buildTower(towerHeight);
   buttonStateAction();
-  
+  drawCow(true);
   
   if(pressCount > start && towerHeight != -120) {
     towerHeight -= start;
@@ -42,7 +43,9 @@ void ctScreenDraw() {
     textFont(font, 40);
     fill(255,255,255);
     text("YAY!", 600, 280);
+    busDriveOn();
   }
+  
 }
 
 void buttonStateAction() {
