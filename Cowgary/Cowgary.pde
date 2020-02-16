@@ -8,7 +8,7 @@ void setup() {
 
 void draw() {
   //introNewsPaperScreenDraw();
-  convinceJezosScreenDraw();
+  //convinceJezosScreenDraw();
   switch(currentScreen) {
     case "startScreen":
       startScreenDraw();
