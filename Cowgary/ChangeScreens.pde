@@ -54,6 +54,7 @@ void changeScreens(){
       currentScreen = "final";
       break;
     case "final":
+      endingScreenSetup();
       currentScreen = "credits";
       break;
   }

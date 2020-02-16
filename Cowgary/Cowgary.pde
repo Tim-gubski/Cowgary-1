@@ -44,7 +44,7 @@ void draw() {
       drawFinalWalk();
       break;
     case "credits":
-      drawFinalWalk();
+      endingScreenDraw();
       break;
   }
 }

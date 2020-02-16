@@ -8,7 +8,7 @@ PImage timImage;
 
 void endingScreenSetup() 
 {
-    endScreenBg = loadImage("PipelineBackground1.png");
+    endScreenBg = loadImage("CalgaryBackdrop.png");
     groundImg = loadImage("Ground.png");
     aidanImage = loadImage("aidan.png");
     alyssaImage = loadImage("alyssa.png");

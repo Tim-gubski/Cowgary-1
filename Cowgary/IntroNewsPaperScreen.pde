@@ -25,7 +25,7 @@ void introNewsPaperScreenDraw()
     case 1:
       drawNewspaper();
       break;
-    case 2:
+    default:
       drawNewspaper();
       fade();
       break;
