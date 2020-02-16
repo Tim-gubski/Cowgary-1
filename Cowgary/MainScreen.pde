@@ -20,6 +20,7 @@ void loadImages() {
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
   bus = loadImage("CalgaryTransitBus.png");
+  bus.resize(400,100);
   pipe = loadImage("Pipe.png");
   pipe.resize(120,90);
   smallPipe = loadImage("Pipe.png");
