@@ -2,9 +2,11 @@ void setup() {
   size(900, 700);
   loadImages();
   startScreenSetup();
+  //convinceJezosScreenSetup();
 }
 
 void draw() {
+  //convinceJezosScreenDraw();
   switch(currentScreen) {
     case "startScreen":
       startScreenDraw();
