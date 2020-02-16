@@ -106,7 +106,7 @@ void keyPressed() {
       break;
     case UP:
       if(onPlatform()){
-        jumpSpeed=19;
+        jumpSpeed=15;
       }
       break;
   }
