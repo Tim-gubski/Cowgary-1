@@ -18,7 +18,6 @@ void herdingScreenSetup() {
 }
 
 void herdingScreenDraw() {
-  fade();
   image(topDownCity, 0,0);
   
   if (entry) {
