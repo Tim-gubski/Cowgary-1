@@ -1,8 +1,9 @@
 void setup() {
   size(900, 700);
-  ctScreenSetup();
+  loadImages();
+  pipeScreenSetup();
 }
 
 void draw() {
-  ctScreenDraw();
+  pipeScreenDraw();
 }
