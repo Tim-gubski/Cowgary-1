@@ -38,7 +38,7 @@ void draw() {
       textMessages();
       break;
     case "talking":
-      changeScreens();
+      convinceJezosScreenDraw();
       break;
     case "final":
       drawFinalWalk();

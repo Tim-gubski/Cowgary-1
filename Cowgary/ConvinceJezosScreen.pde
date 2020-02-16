@@ -9,6 +9,8 @@ int text1Colour = 0;
 int text2Colour = 255;
 int text3Colour = 255;
 
+boolean questInfoDismissed_bezos;
+
 void convinceJezosScreenSetup() {
   sittingCow = loadImage("Cow_SitAtDesk.png");
   jezos = loadImage("BezosPixelated.png");
@@ -19,7 +21,7 @@ void convinceJezosScreenSetup() {
   selectState = "idle";
   selection=0;
   jezosStateCounter = 0;
-  questInfoDismissed = false;
+  questInfoDismissed_bezos = false;
   questDialogueBox = loadImage("dialog_box.png");
   questDialogueBox.resize(750, 250);
 }
@@ -41,7 +43,10 @@ void convinceJezosScreenDraw() {
        break;
     case 2:
        dialogText(true, "Okay okay. So...", "Tell me why Amazoon should come to Cowgary.");
-       if (!questInfoDismissed) {
+       break;
+    case 3:
+      dialogText(true, "Okay okay. So...", "Tell me why Amazoon should come to Cowgary.");
+      if (!questInfoDismissed_bezos) {
           if (!btnPressed) {
             image(questDialogueBox, 75, 200);
             textFont(font, 40);
@@ -50,21 +55,20 @@ void convinceJezosScreenDraw() {
             text("Press any key to begin", 120, 325);
       
           }
-          else {
-            questInfoDismissed = true;
-          }
+        } else {
+            questInfoDismissed_bezos = true;
         }
-       break;
-    case 3:
+        break;
+    case 4:
       challengeText("> Cowgary has 5 developers", "> Cowgary has 4 billion developers", "> I am a developer");
       break;
-    case 4:
+    case 5:
       challengeText("> Our winters aren’t that bad", "> The mountains are close", "> Deerfoot is the best road in the world.");
       break;
-    case 5:
+    case 6:
       challengeText("> At least we aren’t Deadmonton.", "> We have the Stampede.", "> Flames will win the Stanley Cup this year.");
       break;
-    case 6:
+    case 7:
       break;  
   }
   //dialogText(true, "Not impressive, Gary.  But at least", "you’re honest! :)");
