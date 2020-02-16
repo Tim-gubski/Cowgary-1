@@ -81,13 +81,15 @@ void drawCow(boolean moves){
 }
 
 void keyPressed() {
-  switch(keyCode) {
-    case RIGHT:
+  btnPressed = true;
+  switch(keyCode) {    case RIGHT:
       speed = 1;
+      btnState = "right";
       cowState = "right";
       break;
     case LEFT:
       speed = -1;
+      btnState = "left";
       cowState="left";
       break;
     case UP:
@@ -95,12 +97,13 @@ void keyPressed() {
         jumpSpeed=19;
       }
       break;
-
   }
 }
 
 
 void keyReleased() {
+  btnPressed = false;
+  println(keyCode);
   if(keyCode!=38){
     speed=0;
     if(cowState=="right"){
