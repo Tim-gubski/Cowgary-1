@@ -23,7 +23,7 @@ int collectionCounter;
 
 
 void herdingScreenSetup() {
-  font = createFont("ARCADECLASSIC.TTF", 40);
+  //font = createFont("munro", 40);
 
   //startScreenBg = loadImage("CalgaryBackdrop.png");
   //groundImg = loadImage("Ground.png");
