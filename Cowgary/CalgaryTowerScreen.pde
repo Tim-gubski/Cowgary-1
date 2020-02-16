@@ -5,6 +5,9 @@ PImage arrowRPressed;
 PImage arrowLPressed;
 String btnState;
 boolean btnPressed;
+int pressCount;
+int start;
+int towerHeight;
 
 void ctScreenSetup() {
   startScreenBg = loadImage("CalgaryBackdrop.png");
@@ -14,26 +17,46 @@ void ctScreenSetup() {
   arrowR = loadImage("ArrowKeyRight_Released.png");
   arrowRPressed = loadImage("ArrowKeyRight_Pressed.png");
   arrowLPressed = loadImage("ArrowKeyLeft_Pressed.png");
+  font = createFont("ARCADECLASSIC", 40);
   btnPressed = false;
+  pressCount = 0;
+  start = 40;
+  towerHeight = 280;
 }
 
 void ctScreenDraw() {
-  image(startScreenBg, 0,0);
-  image(groundImg, 0, 570);
-  image(groundImg, 400, 570);
-  image(calgaryTower, 100,-100);
-  //image(groundImg, 0, 570);
+  buildTower(towerHeight);
+  buttonStateAction();
   
+  
+  if(pressCount > start && towerHeight != -120) {
+    towerHeight -= start;
+    buildTower(towerHeight);
+    start += 40;
+    print(towerHeight);
+  }
+  
+  if (towerHeight == -120) {
+    textFont(font, 40);
+    fill(255,255,255);
+    text("YAY!", 600, 280);
+  }
+}
+
+void buttonStateAction() {
   if(btnPressed) {
     switch(btnState) {
       case "right":
         rightPressedOnly();
+        pressCount++;
         break;
       case "left":
         leftPressedOnly();
+        pressCount++;
         break;
     }
   } else {
+    btnState = "idle";
     neutralButtons();
   }
 }
@@ -51,4 +74,14 @@ void leftPressedOnly() {
 void neutralButtons() {
   image(arrowL, 650, 375);
   image(arrowR, 650, 375);
+}
+
+void buildTower(int y) {
+  image(startScreenBg, 0,0);
+  image(groundImg, 0, 570);
+  image(groundImg, 400, 570);
+  buttonStateAction();
+  
+  image(calgaryTower, 100, y);
+  image(groundImg, 0, 570);
 }
