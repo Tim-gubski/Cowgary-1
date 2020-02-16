@@ -63,7 +63,6 @@ void herdingScreenSetup() {
 }
 
 void herdingScreenDraw() {
-  fade();
   image(topDownCity, 0,0);
   fill(221, 210, 250);
   rect(460, 5, 265, 60, 7);
@@ -118,7 +117,7 @@ void herdingScreenDraw() {
   }
   
   if (aidan.collision && alyssa.collision && kim.collision && nara.collision && tim.collision) {
-    print("all done");
+    fade();
   }
 }
 

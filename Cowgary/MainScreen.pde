@@ -1,3 +1,6 @@
+
+
+
 PImage calgary;
 PImage office;
 PImage ground;
@@ -122,6 +125,7 @@ void resetCow(){
 }
 
 void keyPressed() {
+  stateCounter++;
   btnPressed = true;
   if(currentScreen == "startScreen" && keyCode == ENTER){
     started = true;
