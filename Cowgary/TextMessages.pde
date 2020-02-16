@@ -13,6 +13,7 @@ void setupTextMessages(String preFix,int num){
   }
   stopSounds();
   bezos.loop();
+  stateCounter = 0;
 }
 
 void textMessages(){

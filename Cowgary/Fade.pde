@@ -12,6 +12,18 @@ boolean fade(){
    changeScreens();
    return true; 
   }
+  
+  //fill(0,fadeWidth);
+  //rect(0,0,width,height);
+  //if(fadeWidth<255){
+  //  fadeWidth+=fadeSpeed;
+  //  fadeSpeed+=1;
+  //  fill(255);
+  //  return false;
+  //}else{
+  // changeScreens();
+  // return true; 
+  //}
 }
 
 void resetFade(){
