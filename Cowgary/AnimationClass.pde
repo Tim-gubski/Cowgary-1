@@ -15,8 +15,8 @@ class Animation {
     }
   }
 
-  void display(float xpos, float ypos) {
-    frame = (frame+0.3)%imageCount;
+  void display(float xpos, float ypos, float rate) {
+    frame = (frame+rate)%imageCount;
     image(images[floor(frame)], xpos, ypos);
   }
   
