@@ -16,24 +16,35 @@ color border;
 
 
 PImage questDialogueBox;
-PImage topBus;
+PImage topBusRight;
+PImage topBusLeft;
+PImage topBusUp;
+PImage topBusDown; 
 
 boolean questInfoDismissed;
 int collectionCounter;
-
+PFont font_herding;
 
 void herdingScreenSetup() {
-  //font = createFont("munro", 40);
+  font_herding = createFont("munro.ttf", 40);
 
-  //startScreenBg = loadImage("CalgaryBackdrop.png");
-  //groundImg = loadImage("Ground.png");
   topDownCity = loadImage("topDownCity.png");
   topDownCity.resize(900, 700);
   
   questDialogueBox = loadImage("dialog_box.png");
   questDialogueBox.resize(750, 250);
   
-  //topBus.resize(busHeight, busWidth);
+  topBusRight = loadImage("PixelBusTopDown_RightFacing.png");
+  topBusRight.resize(busHeight, busWidth);
+  
+  topBusLeft = loadImage("PixelBusTopDown_LeftFacing.png");
+  topBusLeft.resize(busHeight, busWidth);
+  
+  topBusUp = loadImage("PixelBusTopDown_UpFacing.png");
+  topBusUp.resize(busWidth, busHeight);
+  
+  topBusDown = loadImage("PixelBusTopDown_DownFacing.png");
+  topBusDown.resize(busWidth, busHeight);
   
   aidan = new Programmer(700, 600, 45, 50, "aidan.png", 475, 10);
   alyssa = new Programmer(10, 250, 45, 50, "alyssa.png", 525, 10);
@@ -61,20 +72,18 @@ void herdingScreenDraw() {
   drawSprite(kim);
   drawSprite(nara);
   drawSprite(tim);
-  
+ 
   if (entry) {
       driveY++;    
       if (driveY == 20) {
           entry = false;
       }
-      drawBus();
+      drawBus("down");
   }
   else if (!questInfoDismissed) {
     if (!btnPressed) {
-      //fill(211, 138, 59);
-      //rect(200, 200, 500, 300);
       image(questDialogueBox, 75, 200);
-      textFont(font, 40);
+      textFont(font_herding, 40);
       fill(255, 255, 255);
       text("Collect 5 developers!", 120, 275);
       text("Use the arrow keys to drive.", 120, 325);
@@ -105,7 +114,7 @@ void herdingScreenDraw() {
           break;
       }   
     }
-    drawBus();    
+    drawBus(herdingBtnState);    
   }
   
   if (aidan.collision && alyssa.collision && kim.collision && nara.collision && tim.collision) {
@@ -113,12 +122,21 @@ void herdingScreenDraw() {
   }
 }
 
-void drawBus() {
-  if (vertical) {
-     rect(driveX, driveY, busWidth, busHeight);
-  } else {
-     rect(driveX, driveY, busHeight, busWidth);
-  }
+void drawBus(String direction) {  
+  switch(direction) {
+    case "right":
+      image(topBusRight, driveX, driveY);
+      break;
+    case "left":
+      image(topBusLeft, driveX, driveY);
+      break;
+    case "up":
+      image(topBusUp, driveX, driveY);
+      break;
+    case "down":
+      image(topBusDown, driveX, driveY);
+      break;
+  }   
 }
 
 void driveRight() {
