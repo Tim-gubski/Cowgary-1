@@ -3,6 +3,8 @@ PImage ground;
 PImage HQ;
 PImage pipe;
 PImage smallPipe;
+PImage emptyPipe;
+PImage bus;
 
 int x = 0;
 float cowX = 400;
@@ -17,10 +19,13 @@ void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
+  bus = loadImage("CalgaryTransitBus.png");
   pipe = loadImage("Pipe.png");
   pipe.resize(120,90);
   smallPipe = loadImage("Pipe.png");
   smallPipe.resize(60,40);
+  emptyPipe = loadImage("PipeEmpty.png");
+  emptyPipe.resize(60,40);
   cowRight = new Animation("right_", 10);
   cowLeft = new Animation("left_", 10);
   cowIdleRight = new Animation("idle_",5);
