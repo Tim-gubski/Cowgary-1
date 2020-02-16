@@ -14,6 +14,8 @@ void convinceJezosScreenSetup() {
   jezos = loadImage("BezosPixelated.png");
   dialogBox = loadImage("dialog_box.png");
   font = createFont("munro.ttf", 40);
+  stopSounds();
+  bezos.loop();
   selectState = "idle";
   selection=0;
   jezosStateCounter = 0;

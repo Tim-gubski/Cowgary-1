@@ -10,7 +10,7 @@ PFont tower_font;
 
 String btnState;
 boolean btnPressed;
-int pressCount;
+float pressCount;
 int start;
 int towerHeight;
 
@@ -36,6 +36,9 @@ void ctScreenSetup() {
   start = 40;
   towerHeight = 280;
   cowX = 200;
+  
+  stopSounds();
+  pipeBoi.loop();
   towerQuestInfoDismissed = false;
 }
 
@@ -76,11 +79,11 @@ void buttonStateAction() {
     switch(btnState) {
       case "right":
         rightPressedOnly();
-        pressCount++;
+        pressCount+=.5;
         break;
       case "left":
         leftPressedOnly();
-        pressCount++;
+        pressCount+=.5;
         break;
     }
   } else {
