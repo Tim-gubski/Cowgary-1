@@ -1,4 +1,4 @@
-int[] platforms = new int[] {100,480};
+int[] platforms = new int[] {100,480,300,380,100,280,500,280};
 
 
 void pipeScreenSetup() {
