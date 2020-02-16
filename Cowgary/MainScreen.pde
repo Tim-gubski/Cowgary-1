@@ -115,7 +115,6 @@ void keyPressed() {
 
 void keyReleased() {
   btnPressed = false;
-  println(keyCode);
   if(keyCode!=38){
     speed=0;
     if(cowState=="right"){
