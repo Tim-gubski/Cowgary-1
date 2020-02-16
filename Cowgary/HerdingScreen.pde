@@ -60,6 +60,9 @@ void herdingScreenSetup() {
   questInfoDismissed = false;
   
   collectionCounter = 0;
+  
+  stopSounds();
+  pipeBoi.loop();
 }
 
 void herdingScreenDraw() {
