@@ -11,6 +11,8 @@ PImage bus;
 
 SoundFile calm;
 SoundFile bezos;
+SoundFile zen;
+SoundFile pipeBoi;
 
 int x = 0;
 float cowX = 400;
@@ -46,7 +48,17 @@ void loadImages() {
   
   calm = new SoundFile(this, "Retroland_Recital.wav"); 
   bezos = new SoundFile(this, "Conferring_with_an_Old_Master.wav"); 
-  calm.play();
+  zen = new SoundFile(this, "Digital_Zen.wav"); 
+  pipeBoi = new SoundFile(this, "All_Time_High_Jump.wav"); 
+
+  calm.loop();
+}
+
+void stopSounds(){
+  calm.stop();
+  bezos.stop();
+  zen.stop();
+  pipeBoi.stop();
 }
 
 void setBackground() {
@@ -92,7 +104,9 @@ boolean onPlatform(){
 
 void drawCow(boolean moves){
   if(moves){
-    cowX+=speed*2;
+    if((cowX>0 && speed<0) || (cowX<width-110 && speed>0)){
+      cowX+=speed*2;
+    }
     cowY-=jumpSpeed;
     
     if(!onPlatform()){
@@ -148,12 +162,19 @@ void keyPressed() {
       break;
     case UP:
       herdingBtnState = "up";
+      selectState = "up";
+      selection-=1;
       if(onPlatform()){
         jumpSpeed=15;
       }
       break;
     case DOWN:
+      selection+=1;
       herdingBtnState = "down";
+      selectState = "down";
+      break;
+    case ENTER:
+      jezosStateCounter+=1;
   }
 }
 

@@ -45,9 +45,12 @@ void changeScreens(){
       currentScreen = "messages4";
       break;
     case "messages4":
+      convinceJezosScreenSetup();
       currentScreen = "talking";
       break;
     case "talking":
+      stopSounds();
+      zen.loop();
       currentScreen = "final";
       break;
     case "final":
