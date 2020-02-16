@@ -1,6 +1,7 @@
 PImage calgary;
 PImage office;
 PImage ground;
+PImage platformGround;
 PImage HQ;
 PImage pipe;
 PImage smallPipe;
@@ -21,6 +22,8 @@ void loadImages() {
   office = loadImage("OfficeMap.png");
   office.resize(900,700);
   ground = loadImage("Ground.png");
+  platformGround = loadImage("Ground.png");
+  platformGround.resize(20,20);
   HQ = loadImage("AmazonHQ.png");
   bus = loadImage("CalgaryTransitBus.png");
   bus.resize(400,100);
