@@ -17,6 +17,9 @@ void convinceJezosScreenSetup() {
   selectState = "idle";
   selection=0;
   jezosStateCounter = 0;
+  questInfoDismissed = false;
+  questDialogueBox = loadImage("dialog_box.png");
+  questDialogueBox.resize(750, 250);
 }
 
 void convinceJezosScreenDraw() {
@@ -101,11 +104,24 @@ void challengeText(String first, String second, String third) {
       text3Colour = 0;
       break;
   }
-  println(selection);
   fill(255,255,text1Colour);
   text(first, 70, 560);
   fill(255,255,text2Colour);
   text(second, 70, 600);
   fill(255,255,text3Colour);
   text(third, 70, 640);
+  
+  if (!questInfoDismissed) {
+    if (!btnPressed) {
+      image(questDialogueBox, 75, 200);
+      textFont(font, 40);
+      fill(255, 255, 255);
+      text("FINAL QUEST: Convince Beff!", 120, 275);
+      text("Press any key to begin", 120, 325);
+
+    }
+    else {
+      questInfoDismissed = true;
+    }
+  }
 }
