@@ -19,7 +19,7 @@ void ctScreenSetup() {
   arrowRPressed = loadImage("ArrowKeyRight_Pressed.png");
   arrowLPressed = loadImage("ArrowKeyLeft_Pressed.png");
   dottedLine = loadImage("DashedLine.png");
-  font = createFont("ARCADECLASSIC", 40);
+  font = createFont("ARCADECLASSIC.TTF", 40);
   btnPressed = false;
   pressCount = 0;
   start = 40;

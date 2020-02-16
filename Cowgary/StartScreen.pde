@@ -6,7 +6,7 @@ PFont font;
 void startScreenSetup() {
   startScreenBg = loadImage("CalgaryBackdrop.png");
   groundImg = loadImage("Ground.png");
-  font = createFont("ARCADECLASSIC", 40);
+  font = createFont("ARCADECLASSIC.TTF", 40);
 }
 
 void startScreenDraw() {
@@ -15,7 +15,7 @@ void startScreenDraw() {
   image(groundImg, 400, 570);
   textFont(font, 40);
   fill(255,169,40);
-  text("C255, 169, 40owgary", 420, 280);
+  text("Cowgary", 420, 280);
   
   text("Press  Enter  To  Start", 300, 380);
 }
