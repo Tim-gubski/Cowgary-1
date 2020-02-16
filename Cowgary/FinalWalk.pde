@@ -1,5 +1,5 @@
 void drawFinalWalk(){
-    background(255);
+  background(255);
   image(calgary, -x/2, 0);
   image(calgary, -x/2+1000, 0);
   for (int i = 0; i<=6; i++){

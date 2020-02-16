@@ -8,6 +8,8 @@ void pipeScreenSetup() {
   startScreenBg = loadImage("PipelineBackground1.png");
   groundImg = loadImage("Ground.png");
   resetFade();
+  stopSounds();
+  pipeBoi.loop();
 }
 
 void pipeScreenDraw() {

@@ -6,6 +6,8 @@ void convinceJezosScreenSetup() {
   jezos = loadImage("BezosPixelated.png");
   dialogBox = loadImage("dialog_box.png");
   font = createFont("munro.ttf", 40);
+  stopSounds();
+  bezos.loop();
 }
 
 void convinceJezosScreenDraw() {

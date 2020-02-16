@@ -49,6 +49,8 @@ void changeScreens(){
       break;
     case "talking":
       currentScreen = "final";
+      stopSounds();
+      zen.loop();
       break;
     case "final":
       currentScreen = "credits";
