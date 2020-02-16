@@ -43,5 +43,8 @@ void draw() {
     case "final":
       drawFinalWalk();
       break;
+    case "credits":
+      drawFinalWalk();
+      break;
   }
 }

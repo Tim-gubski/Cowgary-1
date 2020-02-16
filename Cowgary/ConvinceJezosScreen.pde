@@ -69,6 +69,7 @@ void convinceJezosScreenDraw() {
       challengeText("> At least we aren’t Deadmonton.", "> We have the Stampede.", "> Flames will win the Stanley Cup this year.");
       break;
     case 7:
+      fade();
       break;  
   }
   //dialogText(true, "Not impressive, Gary.  But at least", "you’re honest! :)");
