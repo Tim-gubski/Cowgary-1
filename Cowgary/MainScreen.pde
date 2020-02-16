@@ -34,16 +34,30 @@ void setBackground() {
   drawCow(false);
 }
 
+boolean onPlatform(){
+  boolean onPlatform = false;
+      for(int i = 0; i<platforms.length; i+=2){
+      if(cowX>platforms[i] && cowX<platforms[i]+100 && cowY < platforms[i+1]-100 && cowY > platforms[i+1]-120 && speed>2){
+      onPlatform = true;
+      }
+    }
+    if(cowY>470){
+      onPlatform = true;
+    }
+  return onPlatform;
+}
+
 void drawCow(boolean moves){
   if(moves){
     cowX+=speed*2;
     cowY-=jumpSpeed;
-    if(cowY<470){
+    
+    if(!onPlatform()){
       jumpSpeed-=1;
     }else{
       jumpSpeed = 0; 
     }
-    
+  
   }else{
    cowX = 400; 
   }
@@ -77,8 +91,8 @@ void keyPressed() {
       cowState="left";
       break;
     case UP:
-      if(cowY>=470){
-        jumpSpeed=15;
+      if(onPlatform()){
+        jumpSpeed=19;
       }
       break;
 
@@ -87,7 +101,6 @@ void keyPressed() {
 
 
 void keyReleased() {
-  println(keyCode);
   if(keyCode!=38){
     speed=0;
     if(cowState=="right"){
