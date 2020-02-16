@@ -1,12 +1,17 @@
 PImage calgary;
 PImage ground;
-int x,y;
+PImage HQ;
 
+int x,y;
+Animation cow1;
+
+String cowState = "idle";
 int speed = 0;
 
 void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
   ground = loadImage("Ground.png");
+  HQ = loadImage("AmazonHQ.png");
 }
 
 void setBackground() {
@@ -16,16 +21,20 @@ void setBackground() {
   for (int i = 0; i<=6; i++){
     image(ground, -2*x+400*i, 570);
   }
+  image(HQ, -2*x+1200, 130);
   x+=speed;
 }
 
 void keyPressed() {
-  if (keyCode == RIGHT) {
-    speed = 1;
-  } else if (keyCode == LEFT) {
-    speed = -1;
-  } else{
-        speed=0;
+  switch(keyCode) {
+    case RIGHT:
+      speed = 1;
+      break;
+    case LEFT:
+      speed = -1;
+      break;
+    default:
+      speed=0;
   }
 }
 
