@@ -1,6 +1,7 @@
 PImage calgary;
 PImage ground;
 PImage HQ;
+PImage pipe;
 
 int x = 0;
 float cowX = 400;
@@ -15,6 +16,7 @@ void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
+  pipe = 
   cowRight = new Animation("right_", 10);
   cowLeft = new Animation("left_", 10);
   cowIdleRight = new Animation("idle_",5);
@@ -37,7 +39,7 @@ void setBackground() {
 boolean onPlatform(){
   boolean onPlatform = false;
       for(int i = 0; i<platforms.length; i+=2){
-      if(cowX>platforms[i] && cowX<platforms[i]+100 && cowY < platforms[i+1]-100 && cowY > platforms[i+1]-120 && speed>2){
+      if(cowX>platforms[i]-100 && cowX<platforms[i]+170 && cowY < platforms[i+1]-90 && cowY > platforms[i+1]-110){
       onPlatform = true;
       }
     }
