@@ -39,6 +39,19 @@ void convinceJezosScreenDraw() {
        break;
     case 2:
        dialogText(true, "Okay okay. So...", "Tell me why Amazoon should come to Cowgary.");
+       if (!questInfoDismissed) {
+          if (!btnPressed) {
+            image(questDialogueBox, 75, 200);
+            textFont(font, 40);
+            fill(255, 255, 255);
+            text("FINAL QUEST: Convince Beff!", 120, 275);
+            text("Press any key to begin", 120, 325);
+      
+          }
+          else {
+            questInfoDismissed = true;
+          }
+        }
        break;
     case 3:
       challengeText("> Cowgary has 5 developers", "> Cowgary has 4 billion developers", "> I am a developer");
@@ -110,18 +123,4 @@ void challengeText(String first, String second, String third) {
   text(second, 70, 600);
   fill(255,255,text3Colour);
   text(third, 70, 640);
-  
-  if (!questInfoDismissed) {
-    if (!btnPressed) {
-      image(questDialogueBox, 75, 200);
-      textFont(font, 40);
-      fill(255, 255, 255);
-      text("FINAL QUEST: Convince Beff!", 120, 275);
-      text("Press any key to begin", 120, 325);
-
-    }
-    else {
-      questInfoDismissed = true;
-    }
-  }
 }
