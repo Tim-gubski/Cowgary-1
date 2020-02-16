@@ -52,7 +52,6 @@ void herdingScreenSetup() {
 }
 
 void herdingScreenDraw() {
-  fade();
   image(topDownCity, 0,0);
   fill(221, 210, 250);
   rect(460, 5, 265, 60, 7);

@@ -2,11 +2,11 @@ PImage[] texts = new PImage[9];
 int currentText = 0;
 int frame;
 
-void setupTextMessages(){
+void setupTextMessages(String preFix){
   resetFade();
   frame = 0;
   for(int i = 1; i<=9; i++){
-    String fileName = "PhoneTexts_Frame" + str(i) + ".png";
+    String fileName = preFix + str(i) + ".png";
     texts[i-1] = loadImage(fileName);
     texts[i-1].resize(600,600);
   }
