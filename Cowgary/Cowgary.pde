@@ -8,13 +8,16 @@ void setup() {
 
 void draw() {
   //introNewsPaperScreenDraw();
-  convinceJezosScreenDraw();
+  //convinceJezosScreenDraw();
   switch(currentScreen) {
     case "startScreen":
       startScreenDraw();
       break;
     case "walkToOffice":
       setBackground();
+      break;
+    case "NewsPaper":
+      introNewsPaperScreenDraw();
       break;
     case "messages1":
       textMessages();

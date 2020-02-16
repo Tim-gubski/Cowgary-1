@@ -3,6 +3,7 @@ PImage office;
 PImage ground;
 PImage platformGround;
 PImage HQ;
+PImage cityHall;
 PImage pipe;
 PImage smallPipe;
 PImage emptyPipe;
@@ -25,6 +26,8 @@ void loadImages() {
   platformGround = loadImage("Ground.png");
   platformGround.resize(20,20);
   HQ = loadImage("AmazonHQ.png");
+  cityHall = loadImage("cityHall.png");
+  cityHall.resize(500,450);
   bus = loadImage("CalgaryTransitBus.png");
   bus.resize(400,100);
   pipe = loadImage("Pipe.png");
@@ -46,19 +49,24 @@ void setBackground() {
   for (int i = 0; i<=6; i++){
     image(ground, -2*x+400*i, 570);
   }
-  //image(HQ, -2*x+1200, 130);
+  image(cityHall, -2*x+1200, 130);
   
   if(x>=0 && speed<0){
     x+=speed;
   }else if(x<1000 && speed>0){
     x+=speed;
   }
-  if(x>600){
-   busDriveOn(); 
-   drawCow(true);
-  }else{
   drawCow(false);
+  if(x>500){
+   fade(); 
   }
+  
+  //if(x>600){
+  // busDriveOn(); 
+  // drawCow(true);
+  //}else{
+  //drawCow(false);
+  //}
 }
 
 boolean onPlatform(){
