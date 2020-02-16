@@ -28,12 +28,15 @@ void setBackground() {
 }
 
 void keyPressed() {
-  if (keyCode == RIGHT) {
-    speed = 1;
-  } else if (keyCode == LEFT) {
-    speed = -1;
-  } else{
-        speed=0;
+  switch(keyCode) {
+    case RIGHT:
+      speed = 1;
+      break;
+    case LEFT:
+      speed = -1;
+      break;
+    default:
+      speed=0;
   }
 }
 
