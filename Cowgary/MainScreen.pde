@@ -9,6 +9,9 @@ PImage smallPipe;
 PImage emptyPipe;
 PImage bus;
 
+SoundFile calm;
+SoundFile bezos;
+
 int x = 0;
 float cowX = 400;
 float cowY = 400;
@@ -40,6 +43,10 @@ void loadImages() {
   cowLeft = new Animation("left_", 10);
   cowIdleRight = new Animation("idle_",5);
   cowIdleLeft = new Animation("leftIdle_",5);
+  
+  calm = new SoundFile(this, "Retroland_Recital.wav"); 
+  bezos = new SoundFile(this, "Conferring_with_an_Old_Master.wav"); 
+  calm.play();
 }
 
 void setBackground() {
@@ -122,6 +129,7 @@ void resetCow(){
 }
 
 void keyPressed() {
+  stateCounter++;
   btnPressed = true;
   if(currentScreen == "startScreen" && keyCode == ENTER){
     started = true;
