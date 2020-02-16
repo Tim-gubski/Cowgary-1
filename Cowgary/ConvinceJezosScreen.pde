@@ -6,6 +6,10 @@ void convinceJezosScreenSetup() {
   jezos = loadImage("BezosPixelated.png");
   dialogBox = loadImage("dialog_box.png");
   font = createFont("munro.ttf", 40);
+  
+  questInfoDismissed = false;
+  questDialogueBox = loadImage("dialog_box.png");
+  questDialogueBox.resize(750, 250);
 }
 
 void convinceJezosScreenDraw() {
@@ -20,4 +24,17 @@ void convinceJezosScreenDraw() {
   fill(255,255,255);
   text("Hey Gary. Nice place you got here.", 50, 560);
   text("Very... quaint.", 50, 600);
+  
+  if (!questInfoDismissed) {
+    if (!btnPressed) {
+      image(questDialogueBox, 75, 200);
+      textFont(font, 40);
+      fill(255, 255, 255);
+      text("FINAL QUEST: Convince Beff!", 120, 275);
+    }
+    else {
+      questInfoDismissed = true;
+    }
+  }
+  
 }
