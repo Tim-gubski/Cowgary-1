@@ -3,7 +3,7 @@ PImage ground;
 PImage HQ;
 
 int x,y;
-Animation cow1;
+Animation cowRight, cowLeft;
 
 String cowState = "idle";
 int speed = 0;
@@ -12,6 +12,7 @@ void loadImages() {
   calgary = loadImage("CalgaryBackdrop.png");
   ground = loadImage("Ground.png");
   HQ = loadImage("AmazonHQ.png");
+  cowRight = new Animation("right_", 10);
 }
 
 void setBackground() {
@@ -22,6 +23,7 @@ void setBackground() {
     image(ground, -2*x+400*i, 570);
   }
   image(HQ, -2*x+1200, 130);
+  cowRight.display(400, 450);
   x+=speed;
 }
 
