@@ -22,7 +22,7 @@ void ctScreenDraw() {
   image(groundImg, 0, 570);
   image(groundImg, 400, 570);
   image(calgaryTower, 100,-100);
-  image(groundImg, 0, 570);
+  //image(groundImg, 0, 570);
   
   if(btnPressed) {
     switch(btnState) {
