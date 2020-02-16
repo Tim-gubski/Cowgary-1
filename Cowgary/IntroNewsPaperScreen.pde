@@ -21,8 +21,9 @@ void introNewsPaperScreenDraw()
        image(dialogBox,20, 500);
        dialogBox.resize(860, dialogBox.height);
        drawIntroDialogueText();
-       if(btnPressed)
+       if(btnPressed){
          stateCounter++;
+       }
        break;
     case 1:
       drawNewspaper();
@@ -30,7 +31,11 @@ void introNewsPaperScreenDraw()
         stateCounter++;
         //changeScreens();
       }
-     break;
+      break;
+    case 2:
+      drawNewspaper();
+      fade();
+      break;
    }
    frame++;
 

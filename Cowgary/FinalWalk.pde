@@ -7,6 +7,13 @@ void drawFinalWalk(){
   }
   image(HQ, -2*x+1200, 130);
   
-  x+=speed;
+  if(x>=0 && speed<0){
+    x+=speed;
+  }else if(x<1000 && speed>0){
+    x+=speed;
+  }
   drawCow(false);
+  if(x>500){
+   fade(); 
+  }
 }

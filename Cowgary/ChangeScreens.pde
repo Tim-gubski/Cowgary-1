@@ -11,6 +11,10 @@ void changeScreens(){
       currentScreen = "walkToOffice";
       break;
     case "walkToOffice":
+      introNewsPaperScreenSetup();
+      currentScreen = "NewsPaper";
+      break;
+    case "NewsPaper":
       setupTextMessages();
       currentScreen = "messages1";
       break;
