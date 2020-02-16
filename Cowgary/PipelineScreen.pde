@@ -5,7 +5,7 @@ boolean[] pickedUpPipes = new boolean[platforms.length/2];
 
 
 void pipeScreenSetup() {
-  startScreenBg = loadImage("CalgaryBackdrop.png");
+  startScreenBg = loadImage("PipelineBackground1.png");
   groundImg = loadImage("Ground.png");
   resetFade();
 }
@@ -13,6 +13,7 @@ void pipeScreenSetup() {
 void pipeScreenDraw() {
   boolean allPicked = true;
   image(startScreenBg, 0,0);
+  startScreenBg.resize(900, 700);
   image(groundImg, 0, 570);
   image(groundImg, 400, 570);  
   pipeBob += pipeBobChange;
