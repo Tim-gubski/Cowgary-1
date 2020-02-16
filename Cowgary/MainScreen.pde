@@ -86,17 +86,22 @@ void keyPressed() {
       speed = 1;
       btnState = "right";
       cowState = "right";
+      herdingBtnState = "right";
       break;
     case LEFT:
       speed = -1;
       btnState = "left";
       cowState="left";
+      herdingBtnState = "left";
       break;
     case UP:
+      herdingBtnState = "up";
       if(onPlatform()){
         jumpSpeed=19;
       }
       break;
+    case DOWN:
+      herdingBtnState = "down";
   }
 }
 

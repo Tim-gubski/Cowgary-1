@@ -1,8 +1,10 @@
 void setup() {
   size(900, 700);
-  ctScreenSetup();
+  //ctScreenSetup();
+  loadImages();
+  herdingScreenSetup();
 }
 
 void draw() {
-  ctScreenDraw();
+  herdingScreenDraw();
 }
