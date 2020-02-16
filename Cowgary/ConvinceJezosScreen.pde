@@ -31,6 +31,8 @@ void convinceJezosScreenDraw() {
       textFont(font, 40);
       fill(255, 255, 255);
       text("FINAL QUEST: Convince Beff!", 120, 275);
+      text("Press any key to begin", 120, 325);
+
     }
     else {
       questInfoDismissed = true;
