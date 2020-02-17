@@ -76,7 +76,7 @@ void herdingScreenDraw() {
   drawSprite(tim);
  
   if (entry) {
-      driveY++;    
+      driveY += 3;    
       if (driveY == 20) {
           entry = false;
       }
@@ -142,20 +142,20 @@ void drawBus(String direction) {
 }
 
 void driveRight() {
-  driveX++;
+  driveX += 3;
 }
 
 void driveLeft() {
-  driveX--;
+  driveX -= 3;
 }
 
 
 void driveUp() {
- driveY--; 
+ driveY -= 3; 
 }
 
 void driveDown() {
-  driveY++;
+  driveY += 3;
 }
 
 void drawSprite(Programmer programmer) {
