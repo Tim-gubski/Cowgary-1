@@ -1,9 +1,0 @@
-void setup() {
-  size(900, 700);
-  loadImages();
-  convinceJezosScreenSetup();
-}
-
-void draw() {
-  convinceJezosScreenDraw();
-}
