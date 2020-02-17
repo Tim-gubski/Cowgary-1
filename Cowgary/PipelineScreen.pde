@@ -60,7 +60,7 @@ if(abs(pipeBob)>4){
       image(questDialogueBox, 75, 200);
       textFont(font, 40);
       fill(255, 255, 255);
-    text("Build pipeline (0/3 pipes collected)", 120, 275);
+    text("Build pipeline (0/4 pipes collected)", 120, 275);
       text("Use the arrow keys to drive.", 120, 325);
       text("Press any key to begin.", 120, 375);
     }
