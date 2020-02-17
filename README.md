@@ -9,6 +9,9 @@ This game was created for CalgaryHacks 2020.
    2. Search for and install 'Sound' authored by The Processing Foundation
 4. Click the Play button
 
+## Authors
+Nara Rzayeva, Tim Gubski, Aidan Lee, Alyssa Lee, Kimberly Chan
+
 ## Credits for Assets 
 * Transit Bus: https://www.redbubble.com/people/kidspictureshow/works/26786418-double-decker-bus-the-kids-picture-show-pixel-art?p=art-print
 * City Pixel Backdrop: https://www.vectorstock.com/royalty-free-vector/pixel-art-cityscape-town-street-8-bit-city-vector-24821632
