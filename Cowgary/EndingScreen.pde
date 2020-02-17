@@ -21,7 +21,7 @@ void endingScreenSetup()
 
 void endingScreenDraw()
 {
-  image(startScreenBg, 0,0);
+  image(endScreenBg, 0,0);
   image(groundImg, 0, 570);
   image(groundImg, 400, 570);
   textFont(font, 40);

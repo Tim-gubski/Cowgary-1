@@ -109,6 +109,7 @@ void neutralButtons() {
 
 void buildTower(int y) {
   image(startScreenBg, 0,0);
+  startScreenBg.resize(900,700);
   image(groundImg, 0, 570);
   image(groundImg, 400, 570);
   buttonStateAction();
