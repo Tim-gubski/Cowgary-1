@@ -1,5 +1,5 @@
 # Cowgary
-This game was created for CalgaryHacks 2020.
+This game was created for [CalgaryHacks 2020](https://devpost.com/software/cowgary).
 
 ## Installation Instructions
 1. Download and install Processing (https://processing.org/download/)
