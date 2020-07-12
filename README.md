@@ -10,7 +10,7 @@ This game was created for [CalgaryHacks 2020](https://devpost.com/software/cowga
 4. Click the Play button
 
 ## Authors
-Nara Rzayeva, Tim Gubski, Aidan Lee, Alyssa Lee, Kimberly Chan
+Kimberly Chan, Tim Gubski, Aidan Lee, Alyssa Lee, Nara Rzayeva
 
 ## Credits for Assets 
 * Transit Bus: https://www.redbubble.com/people/kidspictureshow/works/26786418-double-decker-bus-the-kids-picture-show-pixel-art?p=art-print
